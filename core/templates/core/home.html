@@ -1,0 +1,7 @@
+{%extends 'core/base.html'%}
+{% block content %}
+<h3>home</h3>
+    {%if request.user.is_authenticated%}
+        <h1>{{user.username| upper}}, bienvenido</h1>
+    {%endif%}
+{%endblock%}

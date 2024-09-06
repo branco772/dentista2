@@ -1,7 +1,7 @@
 {%extends 'core/base.html'%}
 {% block content %}
     <h3>LOGIN</h3>
-    <form>
+    <form method="post">
         {% csrf_token %}
         <div class="mb-3 sm-2 lg-1">
             <label for="username" class="form-label">Nombre de usuario</label>

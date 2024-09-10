@@ -1,16 +1,16 @@
 {%extends 'core/base.html'%}
 {% block content %}
-    <h3>LOGIN</h3>
-    <form>
+{% load crispy_forms_tags %}
+    <form method="post">
         {% csrf_token %}
-        <div class="mb-3 sm-2 lg-1">
-            <label for="username" class="form-label">Nombre de usuario</label>
-            <input type="text" class="form-control" id="username" name="username">
+        <div class="card mx-auto" style="width: 18rem;">
+            <img class="card-img-top img-thumbnail border border-primary rounded-circle" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRp66LN7hfkCiPcx5qe0Cp5p6sw50wX8ZnUQw&s" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title text-center">Inicio de sesion</h5>
+                {{ form | crispy}}
+                <a href={% url 'register' %} class="btn btn-primary">Registrarse</a>
+                <button type="submit" class="btn btn-primary float-end">Ingresar</button>
+            </div>
         </div>
-        <div class="mb-3">
-            <label for="password" class="form-label">Password</label>
-            <input type="password" class="form-control" id="password" name="password">
-        </div>
-        <button type="submit" class="btn btn-primary">Ingresar</button>
     </form>
 {% endblock %}
